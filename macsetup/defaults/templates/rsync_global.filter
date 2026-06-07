@@ -1,0 +1,102 @@
+# Managed rsync filter defaults for cross-machine copies.
+# This file uses rsync filter-rule syntax, not gitignore syntax.
+# Directory names without an interior slash match recursively at any depth.
+
+# macOS sidecar files.
+- .DS_Store
+- ._*
+- .AppleDouble/
+- .LSOverride
+
+# Python environments, caches, test output, and package artifacts.
+- __pycache__/
+- *.py[cod]
+- *$py.class
+- .venv/
+- __pypackages__/
+- .uv-cache/
+- .pytest_cache/
+- .mypy_cache/
+- .ruff_cache/
+- .pytype/
+- .hypothesis/
+- .tox/
+- .nox/
+- .pyre/
+- .dmypy.json
+- .poetry-cache/
+- .poetry_cache/
+- .pdm-build/
+- .pdm-python
+- .eggs/
+- *.egg-info/
+- *.egg
+- pip-wheel-metadata/
+- .ipynb_checkpoints/
+- htmlcov/
+- .coverage
+- .coverage.*
+- coverage.xml
+
+# JavaScript and frontend dependency/build caches.
+- node_modules/
+- bower_components/
+- jspm_packages/
+- .npm/
+- .pnpm-store/
+- .parcel-cache/
+- .turbo/
+- .next/
+- .nuxt/
+- .svelte-kit/
+- .vite/
+- .angular/
+- .vitest/
+- .nyc_output/
+- .eslintcache
+- .stylelintcache
+- .prettier-cache
+- .sass-cache/
+- .rpt2_cache/
+- playwright-report/
+- blob-report/
+
+# Language/build-system outputs.
+- build/
+- dist/
+- target/
+- coverage/
+- CMakeFiles/
+- CMakeCache.txt
+- cmake-build-*/
+- build-sanitizer-*/
+- compile_commands.json
+- .gradle/
+- .build/
+- .swiftpm/
+- .dart_tool/
+- .cxx/
+- .metals/
+- .bloop/
+- .scala-build/
+- .terraform/
+- .terragrunt-cache/
+- .serverless/
+- .webpack/
+- .zig-cache/
+- zig-cache/
+- zig-out/
+- bazel-bin/
+- bazel-out/
+- bazel-testlogs/
+- bazel-*/
+- buck-out/
+- _build/
+- DerivedData/
+- *.dSYM/
+- xcuserdata/
+- *.xcuserstate
+
+# Local scratch directories that should not be machine state.
+- .cache/
+- .tmp/

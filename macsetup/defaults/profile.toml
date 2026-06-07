@@ -1,0 +1,601 @@
+[profile]
+name = "macsetup-base"
+description = "Public, non-private defaults for a modern macOS developer workstation."
+
+[python]
+version = "3.14"
+versions = ["3.11", "3.12", "3.13", "3.14"]
+build_jobs = "auto"
+tooling_packages = ["pip", "wheel", "setuptools", "uv", "poetry"]
+global_packages = [
+  "ipython",
+  "pandas",
+  "numpy",
+  "orjson",
+  "pendulum",
+  "visidata",
+  "litecli",
+  "jupyterlab",
+  "black",
+  "ruff",
+  "ufmt",
+]
+
+[javascript]
+npm_global_packages = ["uglify-js"]
+
+[brew]
+formula_reject = ["kerl", "rebar3", "sassc"]
+
+[[brew.formulas]]
+name = "zsh-autosuggestions"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "zsh-completions"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "bash"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "bash-completion@2"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "tmux"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "coreutils"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "fswatch"
+tags = ["packages", "shell"]
+
+[[brew.formulas]]
+name = "ripgrep"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "neovim"
+tags = ["packages", "editor"]
+
+[[brew.formulas]]
+name = "bat"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "fzf"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "fd"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "dust"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "duf"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "jq"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "git"
+tags = ["packages", "git"]
+
+[[brew.formulas]]
+name = "git-delta"
+tags = ["packages", "git"]
+
+[[brew.formulas]]
+name = "git-lfs"
+tags = ["packages", "git"]
+
+[[brew.formulas]]
+name = "awk"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "yt-dlp"
+tags = ["packages", "media"]
+
+[[brew.formulas]]
+name = "exiftool"
+tags = ["packages", "media"]
+
+[[brew.formulas]]
+name = "autossh"
+tags = ["packages", "network"]
+
+[[brew.formulas]]
+name = "openssh"
+tags = ["packages", "network", "shell"]
+
+[[brew.formulas]]
+name = "rename"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "openblas"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "cmake"
+tags = ["packages", "build"]
+
+[[brew.formulas]]
+name = "clang-format"
+tags = ["packages", "build", "formatters"]
+
+[[brew.formulas]]
+name = "libxml2"
+tags = ["packages", "build"]
+
+[[brew.formulas]]
+name = "apache-arrow"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "openssl@3"
+tags = ["packages", "python-build"]
+note = "Modern Homebrew OpenSSL formula."
+
+[[brew.formulas]]
+name = "readline"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "sqlite"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "xz"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "bzip2"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "libffi"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "pkg-config"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "tcl-tk"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "ffmpeg"
+tags = ["packages", "media"]
+
+[[brew.formulas]]
+name = "pandoc"
+tags = ["packages", "docs"]
+
+[[brew.formulas]]
+name = "aspell"
+tags = ["packages", "docs"]
+
+[[brew.formulas]]
+name = "awscli"
+tags = ["packages", "cloud"]
+
+[[brew.formulas]]
+name = "llama.cpp"
+tags = ["packages", "ai"]
+
+[[brew.formulas]]
+name = "nmap"
+tags = ["packages", "network"]
+
+[[brew.formulas]]
+name = "rsync"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "watch"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "dnsmasq"
+tags = ["packages", "dns"]
+
+[[brew.formulas]]
+name = "htop"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "wget"
+tags = ["packages", "network"]
+
+[[brew.formulas]]
+name = "ansible"
+tags = ["packages", "automation"]
+
+[[brew.formulas]]
+name = "cowsay"
+tags = ["packages", "fun"]
+
+[[brew.formulas]]
+name = "pv"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "bc"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "broot"
+tags = ["packages", "cli", "shell"]
+
+[[brew.formulas]]
+name = "tokei"
+tags = ["packages", "cli"]
+
+[[brew.formulas]]
+name = "zig"
+tags = ["packages", "languages"]
+
+[[brew.formulas]]
+name = "rust"
+tags = ["packages", "languages"]
+
+[[brew.formulas]]
+name = "lua"
+tags = ["packages", "languages"]
+
+[[brew.formulas]]
+name = "luarocks"
+tags = ["packages", "languages"]
+
+[[brew.formulas]]
+name = "pyenv"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "node"
+tags = ["packages", "javascript"]
+note = "Provides npm; replaces the old npm formula alias."
+
+[[brew.formulas]]
+name = "prettier"
+tags = ["packages", "javascript", "formatters"]
+
+[[brew.formulas]]
+name = "perl"
+tags = ["packages", "languages"]
+
+[[brew.formulas]]
+name = "zlib"
+tags = ["packages", "python-build"]
+
+[[brew.formulas]]
+name = "universal-ctags"
+tags = ["packages", "editor"]
+note = "Modern ctags implementation."
+
+[[brew.formulas]]
+name = "uv"
+tags = ["packages", "python"]
+note = "Modern Python tool runner and package manager."
+
+[[brew.casks]]
+name = "1password"
+tags = ["packages", "apps", "security"]
+app_bundles = ["1Password.app"]
+
+# BetterTouchTool is intentionally not installed by the public default profile
+# while a replacement input-automation tool is being evaluated.
+# [[brew.casks]]
+# name = "bettertouchtool"
+# tags = ["packages", "apps", "productivity"]
+# app_bundles = ["BetterTouchTool.app"]
+
+[[brew.casks]]
+name = "claude"
+tags = ["packages", "apps", "ai"]
+app_bundles = ["Claude.app"]
+
+[[brew.casks]]
+name = "codex-app"
+tags = ["packages", "apps", "ai"]
+app_bundles = ["Codex.app"]
+
+[[brew.casks]]
+name = "cursor"
+tags = ["packages", "apps", "ai", "editor"]
+app_bundles = ["Cursor.app"]
+
+[[brew.casks]]
+name = "discord"
+tags = ["packages", "apps", "communications"]
+app_bundles = ["Discord.app"]
+
+[[brew.casks]]
+name = "firefox"
+tags = ["packages", "apps", "browser"]
+app_bundles = ["Firefox.app"]
+
+[[brew.casks]]
+name = "tigervnc"
+tags = ["packages", "apps", "remote-access"]
+app_bundles = ["TigerVNC.app"]
+note = "TigerVNC viewer cask."
+
+[[brew.casks]]
+name = "font-meslo-lg-nerd-font"
+tags = ["packages", "fonts"]
+
+[[brew.casks]]
+name = "font-liberation-nerd-font"
+tags = ["packages", "fonts"]
+
+[[brew.casks]]
+name = "tg-pro"
+tags = ["packages", "apps", "system-monitor"]
+app_bundles = ["TG Pro.app"]
+
+[[brew.casks]]
+name = "transmission"
+tags = ["packages", "apps", "downloads"]
+app_bundles = ["Transmission.app"]
+
+[[brew.casks]]
+name = "tradingview"
+tags = ["packages", "apps", "finance"]
+app_bundles = ["TradingView.app"]
+
+[[brew.casks]]
+name = "visual-studio-code"
+tags = ["packages", "apps", "editor"]
+app_bundles = ["Visual Studio Code.app"]
+
+[[brew.casks]]
+name = "vlc"
+tags = ["packages", "apps", "media"]
+app_bundles = ["VLC.app"]
+
+[[brew.casks]]
+name = "wezterm"
+tags = ["packages", "terminal"]
+app_bundles = ["WezTerm.app"]
+
+[[brew.casks]]
+name = "windscribe"
+tags = ["packages", "apps", "network"]
+app_bundles = ["Windscribe.app"]
+installer_bundles = ["WindscribeInstaller.app"]
+note = "Homebrew stages the Windscribe installer app; run it manually to create Windscribe.app."
+
+[macos]
+
+[[macos.defaults]]
+name = "screenshot-location"
+domain = "com.apple.screencapture"
+key = "location"
+value = "~/Desktop/Screenshots"
+value_type = "path"
+directories = ["~/Desktop/Screenshots"]
+tags = ["macos", "defaults", "screenshots"]
+
+[manual]
+
+[[manual.apps]]
+name = "Trello"
+install_method = "Mac App Store"
+url = "https://apps.apple.com/us/app/trello/id1278508951?mt=12"
+tags = ["packages", "apps", "manual", "productivity"]
+app_bundles = ["Trello.app"]
+
+[[manual.notes]]
+name = "Disable Tips Notifications"
+detail = "System Settings -> Notifications -> Tips: turn Allow Notifications off."
+tags = ["macos", "manual", "notifications"]
+
+[[manual.notes]]
+name = "Disable AirPlay Receiver"
+detail = "System Settings -> search AirPlay Receiver, or General -> AirDrop & Handoff: turn AirPlay Receiver off so Control Center does not listen on TCP port 7000."
+tags = ["macos", "manual", "network", "privacy"]
+
+[[manual.notes]]
+name = "Increase Display Resolution"
+detail = "System Settings -> Displays: choose the preferred scaled resolution, usually More Space on high-density displays."
+tags = ["macos", "manual", "display"]
+
+[[manual.notes]]
+name = "Increase Mouse Sensitivity"
+detail = "System Settings -> Mouse: increase Tracking speed and review scrolling direction/speed."
+tags = ["macos", "manual", "input"]
+
+[[manual.notes]]
+name = "Review Battery And Performance Modes"
+detail = "System Settings -> Battery: choose desired Low Power Mode, power adapter behavior, display sleep behavior, and hardware-specific performance mode if present."
+tags = ["macos", "manual", "power"]
+
+[[manual.notes]]
+name = "Review Screen Saver And Lock Timing"
+detail = "System Settings -> Lock Screen and Screen Saver: set screen saver start delay, display-off delay, and require-password timing."
+tags = ["macos", "manual", "security", "display"]
+
+[[manual.notes]]
+name = "Restrict Spotlight Results"
+detail = "System Settings -> Siri & Spotlight -> Search Results: leave Applications enabled and optionally Documents, then disable other categories."
+tags = ["macos", "manual", "spotlight", "privacy"]
+
+[[manual.notes]]
+name = "Review Login And Background Items"
+detail = "System Settings -> General -> Login Items & Extensions: remove unwanted login items and background items."
+tags = ["macos", "manual", "startup", "privacy"]
+
+[[git.settings]]
+key = "user.useConfigOnly"
+value = "true"
+
+[[git.settings]]
+key = "core.symlinks"
+value = "true"
+
+[[git.settings]]
+key = "core.excludesfile"
+value = "~/.gitignore_global"
+
+[[git.settings]]
+key = "core.editor"
+value = "nvim"
+
+[[git.settings]]
+key = "core.pager"
+value = "delta"
+
+[[git.settings]]
+key = "pager.branch"
+value = "false"
+
+[[git.settings]]
+key = "pager.log"
+value = "$HOME/.local/bin/git-log-pager"
+
+[[git.settings]]
+key = "pager.show"
+value = "delta"
+
+[[git.settings]]
+key = "pager.diff"
+value = "delta"
+
+[[git.settings]]
+key = "init.defaultBranch"
+value = "main"
+
+[[git.settings]]
+key = "alias.root"
+value = "!git rev-list --max-parents=0 HEAD"
+
+[[git.settings]]
+key = "alias.llog"
+value = "log --pretty=fuller"
+
+[[git.settings]]
+key = "alias.logs"
+value = "log --graph --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) %C(cyan)<%an>%Creset' --abbrev-commit"
+
+[[git.settings]]
+key = "alias.rl"
+value = "reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'"
+
+[[git.settings]]
+key = "alias.tagdate"
+value = "log --date-order --graph --tags --simplify-by-decoration --pretty=format:\"%ai %h %d\""
+
+[[git.settings]]
+key = "alias.branchbydate"
+value = "for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+
+[[git.settings]]
+key = "alias.branchcolor"
+value = "!for ref in $(git for-each-ref --sort=-committerdate --format=\"%(refname)\" refs/heads/ refs/remotes ); do git log -n1 $ref --pretty=format:\"%Cgreen%cr%Creset %C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n\" | cat ; done | awk '! a[$0]++'"
+
+[[git.settings]]
+key = "alias.gha"
+value = "!f() { git remote add $1 https://github.com/$1/$2.git; }; f"
+
+[[git.settings]]
+key = "alias.gpr"
+value = "!f() { git fetch origin pull/$1/head:$2; }; f"
+
+[[git.settings]]
+key = "interactive.diffFilter"
+value = "delta --color-only"
+
+[[git.settings]]
+key = "delta.navigate"
+value = "true"
+
+[[git.settings]]
+key = "delta.dark"
+value = "true"
+
+[[git.settings]]
+key = "delta.line-numbers"
+value = "false"
+
+[[git.settings]]
+key = "delta.pager"
+value = "less -FRX"
+
+[[git.settings]]
+key = "delta.side-by-side"
+value = "false"
+
+[[git.settings]]
+key = "delta.keep-plus-minus-markers"
+value = "true"
+
+[[git.settings]]
+key = "delta.hunk-header-style"
+value = "file line-number syntax"
+
+[[git.settings]]
+key = "delta.file-style"
+value = "bold blue"
+
+[[git.settings]]
+key = "delta.max-line-distance"
+value = "0.6"
+
+[[git.settings]]
+key = "delta.word-diff-regex"
+value = "\\w+"
+
+[[git.settings]]
+key = "merge.conflictStyle"
+value = "zdiff3"
+
+[[git.settings]]
+key = "color.ui"
+value = "true"
+
+[[git.settings]]
+key = "diff.colorMoved"
+value = "default"
+
+[[git.settings]]
+key = "diff.colorMovedWS"
+value = "allow-indentation-change"
+
+[[git.settings]]
+key = "push.followTags"
+value = "true"
+
+[[git.settings]]
+key = "filter.lfs.clean"
+value = "git-lfs clean -- %f"
+
+[[git.settings]]
+key = "filter.lfs.smudge"
+value = "git-lfs smudge -- %f"
+
+[[git.settings]]
+key = "filter.lfs.process"
+value = "git-lfs filter-process"
+
+[[git.settings]]
+key = "filter.lfs.required"
+value = "true"
+
+[dns]
+servers = ["8.8.8.8", "4.2.2.1", "4.2.2.2", "4.2.2.3", "4.2.2.4", "4.2.2.5", "4.2.2.6", "8.8.4.4"]
+passthrough_domains = ["api.twitter.com", "tpop-api.twitter.com", "old.reddit.com"]
+blocked_domains = ["twitter.com", "ycombinator.com", "reddit.com", "redd.it", "facebook.com", "fb.com", "meta.com", "openai.com"]

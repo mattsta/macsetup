@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv
+uv.lock
+.python-version
+
+# macOS/editor noise
+.DS_Store
+
+# Private machine/user overlays
+local/
+local/*.toml
+local/rsync-excludes.txt
+local/rsync-daemon-password.txt

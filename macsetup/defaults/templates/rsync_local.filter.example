@@ -1,0 +1,8 @@
+# Machine-local rsync filter rules belong in:
+# ~/.config/macsetup/rsync/local.filter
+#
+# This example is managed by macsetup. The active local.filter file is not
+# managed, so private machine/project rules can be edited freely.
+#
+# Example:
+# - large-local-cache/

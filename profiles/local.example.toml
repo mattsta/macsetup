@@ -1,0 +1,35 @@
+[profile]
+name = "example-local"
+description = "Copy to local/<machine-or-user>.toml and pass with --profile."
+
+[brew]
+formula_deny = ["cowsay"]
+
+[[brew.formula_extend]]
+name = "helix"
+tags = ["packages", "editor"]
+
+[source_builds]
+# Example private/source-built tool. Cargo builds automatically require git and
+# rust through Homebrew; add project-specific native deps in brew_dependencies.
+# [[source_builds.package_extend]]
+# name = "hiproc"
+# repo = "git@github.com:your-org/hiproc.git"
+# build_system = "cargo"
+# ref = "main"
+# binaries = ["hiproc"]
+# install_mode = "copy"
+# install_dir = "~/.local/bin"
+# build_commands = ["cargo build --release"]
+# binary_dir = "target/release"
+# brew_dependencies = []
+
+[git]
+# local/*.toml overlays are loaded automatically from the repo checkout.
+[[git.setting_extend]]
+key = "user.name"
+value = "Example User"
+
+[[git.setting_extend]]
+key = "user.email"
+value = "user@example.com"

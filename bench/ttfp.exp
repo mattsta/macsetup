@@ -1,0 +1,84 @@
+#!/usr/bin/env expect
+# Time-to-first-page benchmark for a git pager configuration.
+#
+# Usage: ttfp.exp <repo> <pager.log value>
+#
+# Spawns `git -c pager.log=<value> log -p` on a REAL pty (expect provides one),
+# waits until the pager has painted a screen and parked (detected by output
+# going quiet for a short settle window), then sends 'q' and reports the
+# wall-clock time from launch to that parked-screen moment.
+#
+# This measures exactly what a human feels: how long until the first page is
+# on screen and interactive. A config that streams (delta/less direct) parks
+# almost immediately; a config that buffers the whole history first parks only
+# after the buffering completes.
+
+if {$argc != 2} {
+    puts "usage: ttfp.exp <repo> <pager.log value>"
+    exit 2
+}
+set repo   [lindex $argv 0]
+set pager  [lindex $argv 1]
+
+# A believable terminal size so less paginates.
+set stty_init "rows 50 cols 200"
+
+set timeout 20
+cd $repo
+
+set t0 [clock microseconds]
+spawn git -c "pager.log=$pager" log -p
+
+# Wait for the first burst of output, then for output to go quiet (settle),
+# which indicates the pager has finished painting page 1 and is waiting on us.
+# We detect "parked" as: we've seen output, then no new output for `settle` ms.
+set settle_ms 500
+set seen 0
+set parked_at 0
+
+# First, block until ANY output appears (first byte / first paint).
+expect {
+    -re {.+} {
+        set first_paint [clock microseconds]
+        set seen 1
+    }
+    timeout {
+        puts "RESULT first_paint=NA parked=NA note=no-output-timeout"
+        exit 1
+    }
+    eof {
+        puts "RESULT first_paint=NA parked=NA note=eof-before-output"
+        exit 1
+    }
+}
+
+# Now consume bursts until a quiet gap of settle_ms. Use a short per-read
+# timeout; when it fires with no data, the screen has settled.
+set timeout 1
+while {1} {
+    expect {
+        -re {.+} {
+            # more output arrived; keep draining
+            continue
+        }
+        timeout {
+            # quiet for 1s => parked at the page prompt
+            set parked_at [clock microseconds]
+            break
+        }
+        eof {
+            set parked_at [clock microseconds]
+            break
+        }
+    }
+}
+
+set ttfp_ms [expr {($parked_at - $t0) / 1000.0}]
+puts ""
+puts "RESULT first_paint_ms=[expr {($first_paint - $t0)/1000.0}] parked_ms=$ttfp_ms"
+
+# Quit the pager and reap.
+send "q"
+set timeout 5
+expect eof
+exit 0
